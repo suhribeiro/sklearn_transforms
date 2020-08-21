@@ -19,14 +19,12 @@ class DropColumns(BaseEstimator, TransformerMixin):
         return data.drop(labels=self.columns, axis='columns')
 
 class TransformNulls(BaseEstimator, TransformerMixin):
-    def __init__(self, df):
-        self.df = df
         
-    def fit(self, df):
+    def fit(self, X, y=None):
         return self
     
-    def transform(self, df):
-        data = df.copy()
+    def transform(self, X):
+        data = X.copy()
         data.loc[data.NOTA_MF>10, 'NOTA_MF'] = 10
         media_nota_go = data['NOTA_GO'].mean()
         data.update(data['NOTA_GO'].fillna(media_nota_go))
