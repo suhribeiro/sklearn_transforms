@@ -29,12 +29,12 @@ class TransformNulls(BaseEstimator, TransformerMixin):
         data.update(data['NOTA_GO'].fillna(media_nota_go))
         return data
     
-class Balanceamento(BaseEstimator, TransformerMixin):
+#class Balanceamento(BaseEstimator, TransformerMixin):
     
-    def fit(self, X, y):
-        return self
+    #def fit(self, X, y):
+        #return self
     
-    def transform(self, X, y):
-        smt = SMOTE()
-        X, y = smt.fit_sample(X, y)
-        return X, y 
+    #def transform(self, X, y):
+        #smt = SMOTE()
+       # X, y = smt.fit_sample(X, y)
+       # return X, y 
