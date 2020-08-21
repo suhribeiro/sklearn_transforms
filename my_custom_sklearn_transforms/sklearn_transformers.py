@@ -1,5 +1,4 @@
 from sklearn.base import BaseEstimator, TransformerMixin
-from imblearn.over_sampling import SMOTE
 import numpy as np
 import pandas as pd
 
